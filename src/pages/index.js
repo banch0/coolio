@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import Image from '../components/image'
 
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
     <h1>Hi people</h1>
     <p>Welcome to your new Gatsby site.</p>
@@ -13,7 +13,20 @@ const IndexPage = () => (
       <Image />
     </div>
     <Link to="/page-2/">Go to page 2</Link>
+    <p>{JSON.stringify(data)}</p>
   </Layout>
 )
 
 export default IndexPage
+
+export const query = graphql`
+query PageQuery {
+  allSitePage {
+    edges {
+      node {
+        component 
+      }
+    }
+  }
+}
+`

@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Coolio Story',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -28,5 +28,12 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-source-contentful',
+      options: {
+        spaceId: `qfgue72xq7jc`,
+        accessToken: `427768a0ffcdb109aa76577038027fc420961fcb45035e21b4f8f9f338be7327`
+        },
+      }
   ],
 }
