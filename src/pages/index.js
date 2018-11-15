@@ -21,12 +21,26 @@ export default IndexPage
 
 export const query = graphql`
 query PageQuery {
-  allSitePage {
+	allFile {
     edges {
-      node {
-        component 
+    previous {
+        id
       }
+    node {
+    	name
     }
-  }
+    }
+  } 
+allDirectory {
+  distinct
+}
+  imageSharp {
+    id
+    internal {
+      contentDigest
+      type
+      owner
+    }
+}
 }
 `
